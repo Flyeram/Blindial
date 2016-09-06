@@ -1,6 +1,7 @@
 # Blindial
 
 Blindial is a board-video game where you have to collect plectrums. You have to recognize the music to move forwards.
+Blindial was created for a school project.
 
 # How to install
 
