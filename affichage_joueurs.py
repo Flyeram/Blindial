@@ -1,3 +1,20 @@
+# Copyright 2015 Demasset Gregoire Balu tristan
+""" This file is part of Blindial.
+
+    Blindial is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+	Blindial is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar. If not, see http://www.gnu.org/licenses/.
+"""
+
 # -*-coding: utf8 -*-
 
 import pygame
@@ -17,7 +34,7 @@ import plateau_fct
 def affichage_joueurs(fenetre_jeu, texte_joueur, fond, titre, quitter, rect_quitter):
     """ Cette fonction affiche et permet de sélectionner le nombre de joueurs
     Elle prend en argument : La fenetre de jeu, le texte joueur, le fond, le titre, quitter et son rectangle"""
-    
+
     fenetre_jeu.blit(fond, (0,0))
     fenetre_jeu.blit(titre, (550, 50))
     fenetre_jeu.blit(quitter, (650, 300))
@@ -27,7 +44,7 @@ def affichage_joueurs(fenetre_jeu, texte_joueur, fond, titre, quitter, rect_quit
 
 
     continuer = 1
-    while continuer:        
+    while continuer:
        for event in pygame.event.get():
         #Si on appuie sur echap on revient au menu
             if event.type == KEYDOWN and event.key == K_ESCAPE:
@@ -45,11 +62,11 @@ def affichage_joueurs(fenetre_jeu, texte_joueur, fond, titre, quitter, rect_quit
                     continuer = False
                     jeu = False
                 #Si la position de la souris est sur un nombre de joueur
-                else:                    
+                else:
                     for i in range(4):
                             if rect_menu_joueur[i].collidepoint(mouse_position):
                                 joueurs = i+1
                                 #On lance la suite du programme (Le changement de nom)
                                 continuer, jeu = entreNoms(fenetre_jeu, fond, joueurs)
-                                
+
     return False, jeu

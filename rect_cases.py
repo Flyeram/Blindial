@@ -1,3 +1,20 @@
+# Copyright 2015 Demasset Gregoire Balu tristan
+""" This file is part of Blindial.
+
+    Blindial is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+	Blindial is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar. If not, see http://www.gnu.org/licenses/.
+"""
+
 # -*-coding: utf8 -*-
 import pygame
 from random import *
@@ -23,18 +40,18 @@ from plateau_fct import *
 
 
 def rect_cases():
-    taille = (61, 61)    
+    taille = (61, 61)
     liste_case = []
 
     for y in range(9):
-        
+
         for x in range(9):
-            
+
             if  x % 4 == 0 or  y % 4 == 0 :
                 liste_case.append(pygame.rect.Rect(337 + (68 * x), 57 + (68 * y), 62, 62))
-                
-   
-    
+
+
+
     cases_vertes = [liste_case[5], liste_case[11], liste_case[16], liste_case[24], liste_case[27], liste_case[32], liste_case[34], liste_case[37]]
     cases_oranges = [liste_case[7], liste_case[10], liste_case[12], liste_case[17], liste_case[20], liste_case[28], liste_case[33], liste_case[39]]
     cases_jaunes = [liste_case[1], liste_case[6], liste_case[13], liste_case[15], liste_case[21], liste_case[25], liste_case[35], liste_case[41]]
@@ -50,7 +67,3 @@ def rect_cases():
 if __name__ == "__main__":
     pygame.init()
     print(rect_cases())
-    
-
-
-    

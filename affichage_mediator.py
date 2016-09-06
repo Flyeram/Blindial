@@ -1,3 +1,19 @@
+# Copyright 2015 Demasset Gregoire Balu tristan
+""" This file is part of Blindial.
+
+    Blindial is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+	Blindial is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar. If not, see http://www.gnu.org/licenses/.
+"""
 # -*-coding: utf8 -*-
 
 import pygame
@@ -25,14 +41,10 @@ def affichage_mediator(liste_joueur, fenetre_jeu, nom_joueur, image_joueur, font
         image_med.append(mediator)
     for ind in range(len(liste_joueur)):
         #Affiche les noms des joueurs et leur icone
-        fenetre_jeu.blit(image_joueur[ind], (10, 10 + (ind+1)*50))        
+        fenetre_jeu.blit(image_joueur[ind], (10, 10 + (ind+1)*50))
         nom_j = font_joueur.render(nom_joueur[ind], True, (255, 255, 255))
         fenetre_jeu.blit(nom_j, (35, 10 + (ind+1)*50))
         for med in range(1, 5):
             #Affiche les médiators détenu par le joueur
             if liste_joueur[ind][med] == 1:
                 fenetre_jeu.blit(image_med[med-1], (150+(med-1)*30, 10 + (ind+1)*50))
-                
-                
-        
-    

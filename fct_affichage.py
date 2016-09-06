@@ -1,3 +1,20 @@
+# Copyright 2015 Demasset Gregoire Balu tristan
+""" This file is part of Blindial.
+
+    Blindial is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+	Blindial is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar. If not, see http://www.gnu.org/licenses/.
+"""
+
 # -*-coding: utf8 -*-
 
 import pygame
@@ -34,7 +51,7 @@ def fct_perdu(fenetre_question, font_title, fond, reponse_sous_titre, fenetre_je
     partie = pygame.image.load("Images/partie.jpg").convert()
     fenetre_jeu.blit(partie, (0, 372))
     fenetre_question.blit(fond, (0,0))
-    couplet = reponse_sous_titre[5]    
+    couplet = reponse_sous_titre[5]
     texte1 = font_title.render("Mauvaise réponse !", 1, (255, 255, 255))
     texte_reponse = "La bonne réponse était {}.".format(couplet[0])
     texte2 = font_title.render(texte_reponse, 1, (255, 255, 255))

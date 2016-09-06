@@ -1,3 +1,20 @@
+# Copyright 2015 Demasset Gregoire Balu tristan
+""" This file is part of Blindial.
+
+    Blindial is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+	Blindial is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Foobar. If not, see http://www.gnu.org/licenses/.
+"""
+
 # -*-coding: utf8 -*-
 
 import pygame
@@ -10,7 +27,7 @@ from Lanceur_question import *
 ###########################
 
 def crea_liste():
-    
+
     liste_musique_anime = os.listdir("Musiques/Animes")  #On créer une liste avec toutes
     liste_musique_clip = os.listdir("Musiques/Clips")    #les chansons par catégorie
     liste_musique_film = os.listdir("Musiques/Films")
@@ -19,14 +36,14 @@ def crea_liste():
     return [liste_musique_anime, liste_musique_clip, liste_musique_film, liste_musique_serie]
 
 def musique_choix(categorie, num_mu, liste_musique):
-    
+
     if categorie == "/Animes":
         #On test si la liste est finie, si oui on en récrée une.
         if num_mu[0] > len(liste_musique[0])-1:
             num_mu[0] = 0
             shuffle (liste_musique[0])
         #On choisit la liste correspondant a la catégorie
-        liste_categorie = liste_musique[0]        
+        liste_categorie = liste_musique[0]
         musique_choix = liste_categorie[num_mu[0]]
         #On augmente de 1 l'indice de la catégorie
         num_mu[0] += 1
@@ -55,9 +72,9 @@ def musique_choix(categorie, num_mu, liste_musique):
         musique_choix = liste_categorie[num_mu[3]]
         num_mu[3] += 1
         nb_categorie = 3
-        
-    reponse = musique_choix.split(".")               
-    
+
+    reponse = musique_choix.split(".")
+
 
     return musique_choix, reponse[0], nb_categorie
 
@@ -85,7 +102,7 @@ def presskey():
 def questionnaire(categorie, num_mu, liste_musique, fenetre_jeu):
     bug = True
     while bug == True:
-        
+
         lien_musique, nom_musique, nb_categorie = musique_choix(categorie, num_mu, liste_musique)
         liste_reponse = liste_reponse_fct(lien_musique, liste_musique, nom_musique, nb_categorie)
         reponse_sous_titre = sous_titre(liste_reponse)
@@ -101,4 +118,3 @@ if __name__ == "__main__":
     liste_musique = musique[2]
     liste_reponse = liste_reponse_fct(lien_musique, liste_musique, nom_musique)
     print(question_fct(nom_musique, lien_musique, "/Animes", liste_reponse))
-    
