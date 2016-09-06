@@ -1,6 +1,6 @@
 # Blindial
 
-Blindial is a board-video game where you have to collect mediators. You have to recognize the music to move forwards.
+Blindial is a board-video game where you have to collect plectrums. You have to recognize the music to move forwards.
 
 # How to install
 
