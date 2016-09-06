@@ -1,4 +1,4 @@
-# Copyright 2015 Demasset Gregoire Balu tristan
+# Copyright 2015 Demasse Gregoire Balu tristan
 """ This file is part of Blindial.
 
     Blindial is free software: you can redistribute it and/or modify
@@ -12,7 +12,7 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Foobar. If not, see http://www.gnu.org/licenses/.
+    along with Blindial. If not, see http://www.gnu.org/licenses/.
 """
 
 import sys
